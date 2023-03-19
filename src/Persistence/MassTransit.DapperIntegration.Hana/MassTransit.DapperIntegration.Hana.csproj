@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(IsWindows)' == 'true' ">
+    <TargetFrameworks>$(TargetFrameworks);net462</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>MassTransit</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>MassTransit.DapperIntegration.Hana</PackageId>
+    <Title>MassTransit.DapperIntegration</Title>
+    <PackageTags>MassTransit;Dapper</PackageTags>
+    <Description>MassTransit Dapper persistence support; $(Description)</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MassTransit\MassTransit.csproj" />
+    <PackageReference Include="dapper.contrib" />
+<!--    <PackageReference Include="Microsoft.Data.SqlClient" />-->
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Sap.Data.Hana.Core.v2.1">
+      <HintPath>.\..\Libs\Hana\win-x64\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+</Project>
